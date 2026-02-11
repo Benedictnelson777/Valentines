@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <main class="container">
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <button class="theme-btn" data-theme="classic" title="Classic Romance">💗</button>
+            <button class="theme-btn" data-theme="midnight" title="Midnight Blue">🌙</button>
+            <button class="theme-btn" data-theme="golden" title="Golden Hour">🌅</button>
+            <button class="theme-btn active" id="music-toggle" title="Toggle Music">🎵</button>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-container" id="countdown">
+            <h3>Time Until Our Special Day</h3>
+            <div class="countdown-display">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card" id="question-card">
+            <div class="emoji-container">
+                <span class="main-emoji">🥺</span>
+            </div>
+            <h1>Will you be my <span class="accent">Valentine</span>?</h1>
+            <p>I've been thinking about this for a while...</p>
+
+            <div class="btn-group">
+                <button id="yes-btn" class="btn primary">YES! ❤️</button>
+                <button id="no-btn" class="btn secondary">No 💔</button>
+            </div>
+        </div>
+
+        <div class="glass-card hidden" id="success-card">
+            <div class="emoji-container">
+                <span class="main-emoji">💖</span>
+            </div>
+            <h1>YAAAAAY!</h1>
+            <p>You've made me the happiest person ever! 🥰</p>
+
+            <div class="letter-wrapper">
+                <div class="letter" id="heartfelt-letter">
+                    <div class="letter-content">
+                        <p class="handwritten" id="letter-line-1">My Dearest,</p>
+                        <p class="handwritten" id="letter-line-2">From the moment our paths crossed, my world became
+                            brighter.</p>
+                        <p class="handwritten" id="letter-line-3">Every laugh we share, every adventure we take, every
+                            quiet moment together...</p>
+                        <p class="handwritten" id="letter-line-4">They all remind me how incredibly lucky I am to have
+                            you in my life.</p>
+                        <p class="handwritten" id="letter-line-5">You are my favorite person, my best friend, and the
+                            love of my life.</p>
+                        <p class="handwritten" id="letter-line-6">Will you be my Valentine? ❤️</p>
+                        <p class="handwritten signature" id="letter-line-7">Forever yours...</p>
+                    </div>
+                    <div class="wax-seal">❤️</div>
+                </div>
+            </div>
+
+            <div class="date-badge">February 14, 2026</div>
+
+            <!-- Timeline Section -->
+            <div class="timeline-container">
+                <h2 class="section-title">Our Journey Together</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>First Meeting</h4>
+                            <p class="timeline-date">January 2023</p>
+                            <p>The day our eyes met and time stood still...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>First Date</h4>
+                            <p class="timeline-date">February 2023</p>
+                            <p>Coffee turned into hours of endless conversation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Adventure Begins</h4>
+                            <p class="timeline-date">June 2023</p>
+                            <p>Our first road trip and countless memories made.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Today</h4>
+                            <p class="timeline-date">February 2026</p>
+                            <p>The moment I ask: Will you be my Valentine?</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item future">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Forever</h4>
+                            <p class="timeline-date">? ? ?</p>
+                            <p>Our story continues... ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reasons I Love You Section -->
+            <div class="reasons-container">
+                <h2 class="section-title">Reasons Why I Love You</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card" data-reason="1">
+                        <div class="reason-icon">😊</div>
+                        <h4>Your Smile</h4>
+                        <p>It lights up my entire world and makes everything better.</p>
+                    </div>
+                    <div class="reason-card" data-reason="2">
+                        <div class="reason-icon">💭</div>
+                        <h4>Your Mind</h4>
+                        <p>The way you think, your creativity, your unique perspective on life.</p>
+                    </div>
+                    <div class="reason-card" data-reason="3">
+                        <div class="reason-icon">💪</div>
+                        <h4>Your Strength</h4>
+                        <p>You inspire me every day with your resilience and determination.</p>
+                    </div>
+                    <div class="reason-card" data-reason="4">
+                        <div class="reason-icon">❤️</div>
+                        <h4>Your Heart</h4>
+                        <p>The kindness and love you show to everyone around you.</p>
+                    </div>
+                    <div class="reason-card" data-reason="5">
+                        <div class="reason-icon">😂</div>
+                        <h4>Your Laugh</h4>
+                        <p>The sound of your laughter is my favorite melody.</p>
+                    </div>
+                    <div class="reason-card" data-reason="6">
+                        <div class="reason-icon">🌟</div>
+                        <h4>Everything</h4>
+                        <p>Because you are perfectly, wonderfully, beautifully YOU.</p>
+                    </div>
+                </div>
+                <button class="reveal-secret-btn" id="reveal-secret">✨ Click for a Secret Message ✨</button>
+                <div class="secret-message" id="secret-message">
+                    <p>🔒 Secret Code: Our story began with a glance, continues with love, and will last forever.
+                        Remember: "You + Me = ∞" 💕</p>
+                </div>
+            </div>
+
+            <div class="memories-container">
+                <div class="memories-header">
+                    <h2 class="section-title">Our Favorite Memories</h2>
+                    <button class="upload-btn" id="upload-trigger">+ Add Photos</button>
+                    <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
+                </div>
+                <div class="memory-grid" id="memory-grid">
+                    <div class="memory-card polaroid" data-index="0">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.11.jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">First Adventures Together</p>
+                        <p class="polaroid-date">2023</p>
+                    </div>
+                    <div class="memory-card polaroid" data-index="1">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.13 (1).jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">Making Beautiful Memories</p>
+                        <p class="polaroid-date">2024</p>
+                    </div>
+                    <div class="memory-card polaroid" data-index="2">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.13.jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">That Perfect Day</p>
+                        <p class="polaroid-date">2024</p>
+                    </div>
+                    <div class="memory-card polaroid" data-index="3">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.15.jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">Forever Smiling</p>
+                        <p class="polaroid-date">2025</p>
+                    </div>
+                    <div class="memory-card polaroid" data-index="4">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.17 (1).jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">Our Journey Continues</p>
+                        <p class="polaroid-date">2025</p>
+                    </div>
+                    <div class="memory-card polaroid" data-index="5">
+                        <div class="polaroid-image">
+                            <img src="Assets/WhatsApp Image 2026-02-11 at 09.10.17.jpeg" alt="Our Memory">
+                        </div>
+                        <p class="polaroid-caption">Cherished Moments</p>
+                        <p class="polaroid-date">2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <button class="lightbox-prev">&#8249;</button>
+            <button class="lightbox-next">&#8250;</button>
+            <img class="lightbox-image" id="lightbox-image" src="" alt="Memory">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Celebration Overlays -->
+    <div class="freeze-overlay" id="freeze-overlay"></div>
+    <div class="flash-overlay" id="flash-overlay"></div>
+
+    <!-- Enhanced Music Player -->
+    <div class="music-player" id="music-player">
+        <div class="player-controls">
+            <button class="player-btn" id="play-pause-btn" title="Play/Pause">
+                <span class="play-icon">▶️</span>
+                <span class="pause-icon" style="display: none;">⏸️</span>
+            </button>
+            <div class="track-info">
+                <span class="track-title" id="track-title">Romantic Melody</span>
+                <div class="progress-bar" id="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="volume-control">
+                <button class="volume-btn" id="volume-btn">🔊</button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
+            </div>
+        </div>
+        <div class="playlist-toggle">
+            <button class="playlist-btn" id="playlist-btn">🎵 Playlist</button>
+        </div>
+        <div class="playlist-container" id="playlist-container" style="display: none;">
+            <div class="playlist-item active" data-track="0">
+                <span>💕 Romantic Melody</span>
+            </div>
+            <div class="playlist-item" data-track="1">
+                <span>✨ Sweet Serenade</span>
+            </div>
+            <div class="playlist-item" data-track="2">
+                <span>❤️ Love Theme</span>
+            </div>
+            <div class="upload-track">
+                <label for="custom-music" class="upload-label">➕ Add Your Song</label>
+                <input type="file" id="custom-music" accept="audio/*" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_0e5d450c50.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="track-2" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="track-3" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2021/11/30/audio_5fa8d49d7a.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="custom-track" loop></audio>
+
+    <audio id="whoosh-sound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_12b0c7443c.mp3"></audio>
+    <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_847c9b9be8.mp3"></audio>
+    <audio id="confetti-sound" src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_1f9a38f3e6.mp3"></audio>
+
+    <!-- Enhanced Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Mouse Trail Container -->
+    <div id="mouse-trail-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
